@@ -14,7 +14,7 @@ import 'onsenui/css/onsen-css-components.css';
 // import './node_modules/onsenui/stylus/blue-basic-theme.styl';
 import './styles/index.styl';
 
-import App from './components/App';
+import App from './containers/App';
 import wordLearnHelper from './reducers';
 
 if (ons.platform.isAndroid()) {
@@ -27,18 +27,13 @@ if (ons.platform.isAndroid()) {
 const rootElement = document.getElementById('root');
 
 /**
- * Redux logger
- */
-const logger = createLogger();
-
-/**
  * Adding redux store
  */
 const store = createStore(
   wordLearnHelper,
   compose(
     applyMiddleware(thunk),
-    window.devToolsExtension ? window.devToolsExtension() : f => f
+    window.devToolsExtension ? window.devToolsExtension() : (f) => f
   )
 );
 
