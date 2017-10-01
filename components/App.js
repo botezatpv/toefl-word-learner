@@ -24,7 +24,7 @@ export default class AppComponent extends React.Component {
           </select>
         </div>
         <div className='main-screen'>
-          <h1>{this.props.words.questionWord}</h1>
+          <h2>{this.props.words.questionWord}</h2>
           <button
             className={questionAnswer1}
             onClick={this.guessWord}

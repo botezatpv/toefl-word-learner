@@ -12,6 +12,10 @@ class App extends AppComponent {
     this.selectPage = this.selectPage.bind(this);
   }
 
+  componentDidMount() {
+    this.generateNewQuestion();
+  }
+
   checkAnswer(question) {
     if (this.props.words.answer !== '' && this.props.words.answer !== null && this.props.words.answer !== undefined) {
       if (question === this.props.words.correctAnswer) {
@@ -33,6 +37,7 @@ class App extends AppComponent {
 
   selectPage(e) {
     this.props.simpleActions.selectPage(e.target.value);
+    this.generateNewQuestion();
   }
 }
 
