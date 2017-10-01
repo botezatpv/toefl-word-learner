@@ -92,19 +92,11 @@
     "deploy": "NODE_ENV=production cordova build android",
     "android": "NODE_ENV=production cordova build android && adb uninstall io.cordova.hellocordova && adb install $apk/android-debug.apk"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://gitlab.com/antekmol/cable-sizing.git"
-  },
   "babel": {
     "presets": [
       "es2017"
     ]
   },
-  "keywords": [
-    "Cable",
-    "sizing"
-  ],
   "author": "Botezat Pavel",
   "license": "ISC",
   "eslintConfig": {
