@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
-import * as InstallActions from '../actions/installActions/InstallAsyncActions';
 import AppComponent from '../components/App';
-import PushPage from './PushPage';
 /**
  * Class that renders whole program.
  * @access private

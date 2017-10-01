@@ -1,20 +1,10 @@
 import {combineReducers} from 'redux';
-import Cable from './Cable';
-import Load from './Load';
-import Install from './Install';
-import Results from './Results';
-import Options from './Options';
-import ReductionFactors from './ReductionFactors';
+import words from './wordsReducer';
 /**
  * Putting reducers to store.
  */
-const cableSizingApp = combineReducers({
-  Load,
-  Cable,
-  Install,
-  Results,
-  Options,
-  ReductionFactors
+const wordLearnHelper = combineReducers({
+  words: words,
 });
 
-export default cableSizingApp;
+export default wordLearnHelper;

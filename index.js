@@ -15,9 +15,7 @@ import 'onsenui/css/onsen-css-components.css';
 import './styles/index.styl';
 
 import App from './components/App';
-import cableSizingApp from './reducers';
-
-import * as initAction from './actions/optionsActions/OptionsAsyncActions';
+import wordLearnHelper from './reducers';
 
 if (ons.platform.isAndroid()) {
   require('./styles/Android.styl');
@@ -37,14 +35,13 @@ const logger = createLogger();
  * Adding redux store
  */
 const store = createStore(
-  cableSizingApp,
+  wordLearnHelper,
   compose(
     applyMiddleware(thunk),
     window.devToolsExtension ? window.devToolsExtension() : f => f
   )
 );
 
-store.dispatch(initAction.__init__());
 /**
  * Rendering page
  */
@@ -57,6 +54,7 @@ ons.ready(() => render(
   rootElement
   )
 );
+
 
 /**
  * Hot reload support

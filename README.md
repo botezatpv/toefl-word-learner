@@ -1,5 +1,5 @@
-Cable-sizing App
-================
+TOEFL Word learner
+==================
 
 Requirements
 ------------
@@ -79,6 +79,5 @@ Technologies used
     1. ReactJS
     2. OnsenUI
     3. Cordova
-    4. SQLite - https://www.npmjs.com/package/SQLite
     
 
