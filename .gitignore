@@ -1,0 +1,17 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+
+# Cordova files
+platforms
+plugins
+
+# Dependency directory
+node_modules
+
+#Project description files
+project_description
+
+www/bundle.js*
+.vscode

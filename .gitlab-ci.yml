@@ -1,0 +1,25 @@
+cache:
+  untracked: true
+  key: "$CI_BUILD_REF_NAME"
+  paths:
+    - node_modules/
+
+before_script:
+   - npm install
+   - . ~/.bashrc
+   - export ANDROID_HOME='/root/android-sdk-linux'
+stages:
+  - deploy
+
+deploy_staging:
+  stage: deploy
+  script:
+    # - npm test
+     - cordova prepare
+     - npm run build-prod
+     - npm run deploy
+  environment:
+    name: staging
+    url: http://139.162.166.249:3000
+  only:
+  - master
