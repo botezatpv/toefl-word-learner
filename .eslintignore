@@ -1,6 +1,4 @@
 /www/**
 /platforms/**
 /node_modules/**
-/project_description/**
-/db_calls/Database.js
-/db_calls/Dbcable.js
+

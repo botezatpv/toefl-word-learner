@@ -16,13 +16,7 @@ import {
   ToolbarButton,
   BackButton
 } from 'react-onsenui';
-import CableSizingTabs from './CableSizingTabs';
 import AppContainer from '../containers/App';
-import OptionPage from '../containers/Option';
-import FavoritPage from '../containers/Favorit';
-import ReductionFactorsPage from '../containers/ReductionFactors';
-import {translate} from '../containers/Translate';
-import AboutPage from './About';
 
 class AppComponent extends AppContainer {
 
