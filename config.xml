@@ -1,11 +1,11 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="io.elettro.rapido" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
-    <name>ElettroRAPIDO</name>
+<widget id="io.toefl-word-learner" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <name>TOEFL word learner</name>
     <description>
-        Assistant for electrical designer.
+        Personal assitent in preparing for TOEFL.
     </description>
-    <author email="cad@antek-aad.com" href="http://www.elettrorapido.com/">
-        antek team
+    <author email="botezatpv@gmail.com" href="">
+        Botezat Pavel
     </author>
     <content src="index.html" />
     <plugin name="cordova-plugin-whitelist" spec="1" />
