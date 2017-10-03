@@ -21,7 +21,9 @@ export default class AppComponent extends React.Component {
             <option value={'page2'}>Page 2</option>
             <option value={'page3'}>Page 3</option>
             <option value={'page4'}>Page 4</option>
-          </select>
+            <option value={'page5'}>Page 5</option>
+            <option value={'page6'}>Page 6</option>
+            </select>
         </div>
         <div className='main-screen'>
           <h2>{this.props.words.questionWord}</h2>
