@@ -1,6 +1,7 @@
 import React from 'react';
 import * as Ons from 'react-onsenui';
 import PropTypes from 'prop-types';
+import {wordList} from '../reducers/words';
 export default class AppComponent extends React.Component {
   static propTypes = {
     words: PropTypes.object.isRequired,
@@ -16,12 +17,8 @@ export default class AppComponent extends React.Component {
           <select
             onChange={this.selectPage}
           >
-            <option value={'page0'}>All pages</option>
-            <option value={'page1'}>Page 1</option>
-            <option value={'page2'}>Page 2</option>
-            <option value={'page3'}>Page 3</option>
-            <option value={'page4'}>Page 4</option>
-          </select>
+            {Object.keys(wordList).map((value, key) => <option>{value}</option>)}
+            </select>
         </div>
         <div className='main-screen'>
           <h2>{this.props.words.questionWord}</h2>
