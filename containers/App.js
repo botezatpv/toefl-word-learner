@@ -16,23 +16,24 @@ class App extends AppComponent {
     this.generateNewQuestion();
   }
 
-  checkAnswer(question) {
+  checkAnswer(question, returnBool = false) {
     if (this.props.words.answer !== '' && this.props.words.answer !== null && this.props.words.answer !== undefined) {
       if (question === this.props.words.correctAnswer) {
-        return 'correct-button';
+        this.generateNewQuestion(2);
+        return returnBool ? true : 'correct-button';
       } else {
-        return 'error-button';
+        return returnBool ? false : 'error-button';
       }
     } else {
-      return '';
+      return returnBool ? false : '';
     }
   }
   guessWord(e) {
     this.props.simpleActions.answer(e.target.value);
   }
 
-  generateNewQuestion(e) {
-    this.props.asyncActions.prepareQuestion();
+  generateNewQuestion(mode) {
+    this.props.asyncActions.prepareQuestion(mode);
   }
 
   selectPage(e) {

@@ -1,5 +1,6 @@
 import * as CONST from '../actions/appConstants';
-import {wordList} from './words';
+// import {wordList} from './words';
+import {wordList} from './wordsInput';
 let initialState = {
   ...wordList,
   questionWord: '',
@@ -8,7 +9,7 @@ let initialState = {
   questionAnswer3: '',
   correctAnswer: '',
   answer: '',
-  displayMethod: 'Flashcards_1_2',
+  displayMethod: 'Unit1',
 };
 
 const words = (state = initialState, action) => {
