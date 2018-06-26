@@ -14,7 +14,7 @@ import 'onsenui/css/onsen-css-components.css';
 // import './node_modules/onsenui/stylus/blue-basic-theme.styl';
 import './styles/index.styl';
 
-import App from './containers/App';
+import App from './components/App';
 import wordLearnHelper from './reducers';
 
 if (ons.platform.isAndroid()) {

@@ -1,12 +1,59 @@
 import React from 'react';
 import * as Ons from 'react-onsenui';
 import PropTypes from 'prop-types';
+
+import {
+  answer,
+  prepareQuestion,
+  selectPage,
+} from '../actions/actions';
+import {connect} from 'react-redux';
+import {bindActionCreators} from 'redux';
+
 // import {wordList} from '../reducers/words';
 import {wordList} from '../reducers/wordsInput';
-export default class AppComponent extends React.Component {
+class App extends React.Component {
   static propTypes = {
     words: PropTypes.object.isRequired,
   }
+
+  constructor(props) {
+    super(props);
+    this.guessWord = this.guessWord.bind(this);
+    this.checkAnswer = this.checkAnswer.bind(this);
+    this.generateNewQuestion = this.generateNewQuestion.bind(this);
+    this.selectPage = this.selectPage.bind(this);
+  }
+
+  componentDidMount() {
+    this.generateNewQuestion();
+  }
+
+  checkAnswer(question, returnBool = false) {
+    if (this.props.words.answer !== '' && this.props.words.answer !== null && this.props.words.answer !== undefined) {
+      if (question === this.props.words.correctAnswer) {
+        this.generateNewQuestion(2);
+        return returnBool ? true : 'correct-button';
+      } else {
+        return returnBool ? false : 'error-button';
+      }
+    } else {
+      return returnBool ? false : '';
+    }
+  }
+  guessWord(e) {
+    this.props.answer(e.target.value);
+  }
+
+  generateNewQuestion(mode) {
+    this.props.prepareQuestion(mode);
+  }
+
+  selectPage(e) {
+    this.props.selectPage(e.target.value);
+    // this.generateNewQuestion();
+  }
+
   render() {
     // let questionAnswer1 = this.checkAnswer(this.props.words.questionAnswer1);
     // let questionAnswer2 = this.checkAnswer(this.props.words.questionAnswer2);
@@ -61,3 +108,20 @@ export default class AppComponent extends React.Component {
     );
   }
 }
+
+const mapStateToProps = (state) => ({
+  words: state.words,
+});
+
+const mapDispatchToProps = (dispatch) => bindActionCreators({
+  answer,
+  prepareQuestion,
+  selectPage,
+}, dispatch);
+
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(App);
+

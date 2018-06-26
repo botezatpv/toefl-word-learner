@@ -1,6 +1,11 @@
-import * as CONST from '../actions/appConstants';
-// import {wordList} from './words';
+import {
+  GENERATE_QUESTION,
+  ANSWER,
+  SELECT_PAGE,
+} from '../actions/actions';
+
 import {wordList} from './wordsInput';
+
 let initialState = {
   ...wordList,
   questionWord: '',
@@ -9,12 +14,14 @@ let initialState = {
   questionAnswer3: '',
   correctAnswer: '',
   answer: '',
-  displayMethod: 'Unit1',
+  page: 'Unit1',
+  type: 0,
+  mode: 0,
 };
 
 const words = (state = initialState, action) => {
   switch (action.type) {
-  case CONST.GENERATE_QUESTION:
+  case GENERATE_QUESTION:
     return {
       ...state,
       questionWord: action.questionWord,
@@ -24,15 +31,15 @@ const words = (state = initialState, action) => {
       correctAnswer: action.correctAnswer,
       answer: '',
     };
-  case CONST.ANSWER:
+  case ANSWER:
     return {
       ...state,
       answer: action.answer,
     };
-  case CONST.SELECT_PAGE:
+  case SELECT_PAGE:
     return {
       ...state,
-      displayMethod: action.page,
+      page: action.page,
     };
   default:
     return state;
